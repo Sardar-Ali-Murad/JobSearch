@@ -43,30 +43,80 @@ const userSlice = createSlice({
         state.paginationPage = Number(state.inputPage);
       }
     },
+    // handleTitleSort: (state) => {
+    //   if (state.titleSort) {
+    //     state.data = state.data.sort((a, b) => a.title - b.title);
+    //   } else {
+    //     state.data = state.data.sort((a, b) => b.title - a.title);
+    //   }
+    //   state.titleSort = !state.titleSort;
+    // },
+
     handleTitleSort: (state) => {
       if (state.titleSort) {
-        state.data = state.data.sort((a, b) => a.title > b.title);
+        state.data = state.data.sort(function(a, b) {
+          var textA = a.title.toUpperCase();
+          var textB = b.title.toUpperCase();
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0});
       } else {
-        state.data = state.data.sort((a, b) => a.title < b.title);
+        state.data = state.data.sort(function(a, b) {
+          var textA = a.title.toUpperCase();
+          var textB = b.title.toUpperCase();
+          return (textA < textB) ? 1 : (textA > textB) ? -1 : 0});
       }
       state.titleSort = !state.titleSort;
     },
+
     handleDescriptionSort: (state) => {
       if (state.descriptionSort) {
-        state.data = state.data.sort((a, b) => a.description > b.description);
+        state.data = state.data.sort(function(a, b) {
+          var textA = a.description.toUpperCase();
+          var textB = b.description.toUpperCase();
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0});
       } else {
-        state.data = state.data.sort((a, b) => a.description < b.description);
+        state.data = state.data.sort(function(a, b) {
+          var textA = a.description.toUpperCase();
+          var textB = b.description.toUpperCase();
+          return (textA < textB) ? 1 : (textA > textB) ? -1 : 0});
       }
       state.descriptionSort = !state.descriptionSort;
     },
+
+
     handleLocationSort: (state) => {
       if (state.locationSort) {
-        state.data = state.data.sort((a, b) => a.location > b.location);
+        state.data = state.data.sort(function(a, b) {
+          var textA = a.description.toUpperCase();
+          var textB = b.description.toUpperCase();
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0});
       } else {
-        state.data = state.data.sort((a, b) => a.location < b.location);
+        state.data = state.data.sort(function(a, b) {
+          var textA = a.location.toUpperCase();
+          var textB = b.location.toUpperCase();
+          return (textA < textB) ? 1 : (textA > textB) ? -1 : 0});
       }
       state.locationSort = !state.locationSort;
     },
+
+
+    // handleDescriptionSort: (state) => {
+    //   if (state.descriptionSort) {
+    //     state.data = state.data.sort((a, b) => a.description > b.description);
+    //   } else {
+    //     state.data = state.data.sort((a, b) => a.description < b.description);
+    //   }
+    //   state.descriptionSort = !state.descriptionSort;
+    // },
+
+
+    // handleLocationSort: (state) => {
+    //   if (state.locationSort) {
+    //     state.data = state.data.sort((a, b) => a.location > b.location);
+    //   } else {
+    //     state.data = state.data.sort((a, b) => a.location < b.location);
+    //   }
+    //   state.locationSort = !state.locationSort;
+    // },
   },
 });
 
