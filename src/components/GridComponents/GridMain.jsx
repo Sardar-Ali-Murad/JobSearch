@@ -13,8 +13,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 const GridMain = () => {
   let [loading,setLoading]=React.useState(true)
   let dispatch = useDispatch();
-  // let {data:dummyData}=useSelector((state)=>state.store)
-  // console.log(data)
   let {
     paginationPage,
     selectPage,
@@ -23,10 +21,6 @@ const GridMain = () => {
   } = useSelector((state) => state.store);
 
 
-  
-  // React.useEffect(()=>{
-  //    dispatch(setData({ data: data }));
-  // },[])
 
 
   React.useEffect(() => {
@@ -85,7 +79,7 @@ const GridMain = () => {
             </div>
           </div>
 
-          <div className="gridHeadSingle">
+          <div className="gridHeadSingle URL clientDate">
             <a>Url</a>
             <div className="gridHeadIcons">
               <AiFillCaretUp className="IconUp" />
@@ -108,7 +102,7 @@ const GridMain = () => {
             .map((row) => {
               return (
                 <div>
-                  <div className="flex-even gridBody">
+                  <div className=" gridBody">
                     <div className="firstColumn" style={{ gap: "20px" }}>
                       <a>{row?.title}</a>
                     </div>

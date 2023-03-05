@@ -182,6 +182,21 @@ input {
   justify-content: flex-end;
 }
 
+
+.URL{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gridBody{
+  display: flex;
+  justify-content: space-between;
+}
+
+.gridBody *{
+  flex: 1;
+}
+
 .gridBody a {
   color: #152428;
   font-family: "Nunito", sans-serif;
@@ -237,7 +252,7 @@ input {
 
 .flex-even {
   display: flex;
-  gap: 2rem;
+  /* gap: 2rem; */
   align-items: center;
   justify-content: space-evenly;
 }
@@ -248,7 +263,7 @@ input {
 
 @media screen and (max-width: 700px) {
   .flex-even > * {
-    margin-top: 40px;
+    /* margin-top: 40px; */
   }
 }
 
@@ -262,11 +277,7 @@ input {
   gap: 30px;
 }
 
-@media screen and (max-width:900px) {
-  .tableFooterMain{
-    gap: 10px;
-  }
-}
+
 
 .tableFooterMain p {
   font-family: "Nunito", sans-serif;
