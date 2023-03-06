@@ -6,16 +6,15 @@
 
 /* For the Grid.jsx in the pages*/
 
-.gridMain{
+.gridMain {
   margin-left: 50%;
-transform: translateX(-50%);
-width: 80%;
-border-radius: 16px;
-background-color: #ffffff;
-box-shadow: 0px 4px 15px rgba(58, 96, 110, 0.15);
-padding: 20px; 
+  transform: translateX(-50%);
+  width: 80%;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 15px rgba(58, 96, 110, 0.15);
+  padding: 20px;
 }
-
 
 /* For the TableHeader.jsx */
 
@@ -53,9 +52,6 @@ input {
   height: 24px;
   cursor: pointer;
 }
-
-
-
 
 .box {
   max-width: 400px;
@@ -137,36 +133,23 @@ input {
   cursor: pointer;
 }
 
-
 @media screen and (max-width: 900px) {
-  .gridMain{
+  .gridMain {
     width: 90%;
   }
 }
 
-/* @media screen and (max-width: 800px) {
-  .TableDataMain{
-    overflow-x: scroll;
-  }
-} */
-
-
 @media screen and (max-width: 500px) {
-  /* .gridMain{
-    width: 95%;
-  } */
   .headersMain a {
     display: none;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .gridMain{
+  .gridMain {
     width: 95%;
   }
 }
-
-
 
 /* Fot the TableMain.jsx */
 
@@ -177,60 +160,20 @@ input {
   font-size: 14px;
 }
 
-.clientDateHead {
-  /* display: flex; */
-  /* justify-content: flex-end; */
-}
-
-
-/* .URL{
-  display: flex;
-  justify-content: flex-start;
-} */
-/* 
-.clientDate{
-  display: flex;
-  justify-content: flex-start;
-} */
-
-.gridHead{
+.gridHead {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
 }
 
-.gridBody{
-  /* display: flex;
-  justify-content: space-between;
-  gap: 20px; */
-  /* grid-auto-flow: row; */
+.gridBody {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
 }
 
-.gridBody *{
+.gridBody * {
   flex: 1;
-}
-
-
-.gridBody a {
-  color: #152428;
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.clientDate {
-  display: flex;
-  /* justify-content: flex-end; */
-  cursor: pointer;
-}
-
-.clientDate:hover{
-  color: blue;
-  text-decoration: underline;
 }
 
 .firstColumn {
@@ -267,39 +210,18 @@ input {
   cursor: pointer;
 }
 
-@media screen and (max-width:700px) {
-  /* .gridBody {
-    width: 120vw;
-  }
-  .gridHead {
-    width: 120vw;
-  } */
-  
-  .RowsLine{
-    width: 100%;
-  }
-  /* .gridWrapper{
-    width: 120vw;
-  }
-  .headLine{
-    width: 120vw;
-  } */
+.jobsUrl{
+  cursor: pointer;
 }
 
-.flex-even {
-  display: flex;
-  /* gap: 2rem; */
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.flex-even > * {
-  flex: 1;
+.jobsUrl:hover{
+  color: blue;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 700px) {
-  .flex-even > * {
-    /* margin-top: 40px; */
+  .RowsLine {
+    width: 100%;
   }
 }
 
@@ -312,8 +234,6 @@ input {
   flex-wrap: wrap;
   gap: 30px;
 }
-
-
 
 .tableFooterMain p {
   font-family: "Nunito", sans-serif;
@@ -348,85 +268,34 @@ input {
   margin-top: 30px;
 }
 
-/* For the Pagination TableFooter.jsx */
-
-.preBtn,
-.nextBtn {
-  cursor: pointer;
-}
-
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-weight: 500;
-  font-size: 15px;
-  gap: 10px;
-}
-
-.pagination-container a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  height: 35px;
-  width: 35px;
-  text-decoration: none;
-  transition: background-color 0.2s;
-  border: 1px solid #3a606e;
-  cursor: pointer;
-  color: #152428;
-  font-family: "Nunito", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 7px;
-}
-
-.pagination-container a.active {
-  background-color: #a0ecd0;
-  color: #152428;
-  border: 1px solid #7cbddb;
-}
-
-.pagination-container a.disabled {
-  opacity: 0.2;
-}
-.pagination-container a:hover:not(.active) {
-  background-color: rgb(238, 238, 238);
-}
-
-
-
-
 /* The Responsive Ness Of the table */
-@media screen and (max-width:800px) {
-  .gridBody a{
+@media screen and (max-width: 800px) {
+  .gridBody a {
     font-size: 14px;
   }
 }
 
-@media screen and (max-width:700px) {
-  .gridBody a{
+@media screen and (max-width: 700px) {
+  .gridBody a {
     font-size: 12px;
   }
 }
 
-@media screen and (max-width:500px) {
-  .gridBody a{
+@media screen and (max-width: 500px) {
+  .gridBody a {
     font-size: 10px;
   }
 }
 
-
-@media screen and (max-width:800px){
-  .locationColumn,.descriptionColumn{
+@media screen and (max-width: 800px) {
+  .locationColumn,
+  .descriptionColumn {
     display: none;
   }
-  .gridBody{
+  .gridBody {
     grid-template-columns: 1fr 1fr;
   }
-  .gridHead{
+  .gridHead {
     grid-template-columns: 1fr 1fr;
   }
 }

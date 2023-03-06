@@ -59,7 +59,7 @@ const GridMain = () => {
 
   // The Searching Logic
   // This will for any of the in this way like you search for "wan" and then it will look in the title,description and location tables and come with the row that include the "wan"  keyword
-  const keys = ["title", "description", "location","url"];
+  const keys = ["title", "description", "location", "url"];
 
   return (
     <div className="TableDataMain">
@@ -123,39 +123,26 @@ const GridMain = () => {
                 <div className="gridWrapper">
                   <div className=" gridBody">
                     <div className="firstColumn">
-                      {/* <a className="coloumsEnteries">{row?.title}</a> */}
                       <Highlighter searchText={search}>
                         {row?.title}
                       </Highlighter>
                     </div>
-
-                    {/* <a className="coloumsEnteries">{row?.location}</a> */}
                     <div className="locationColumn">
-                    <Highlighter searchText={search}>
+                      <Highlighter searchText={search}>
                         {row?.location}
                       </Highlighter>
                     </div>
-                    {/* <a className="coloumsEnteries">
-                      {row.description.slice(0, 100)}...
-                    </a> */}
                     <div className="descriptionColumn">
-                     <Highlighter searchText={search}>
-                        {row?.description.slice(0,100)}
+                      <Highlighter searchText={search}>
+                        {row?.description.slice(0, 100)}
                       </Highlighter>
                     </div>
-                    {/* <a
-                      className="clientDate coloumsEnteries"
+                    <div
+                      className="jobsUrl"
                       onClick={() => openInNewTab(row?.url)}
-                      >
-                      {row.url}
-                    </a> */}
-                     
-                    <div className="clientDate" onClick={() => openInNewTab(row?.url)}>
-                    <Highlighter searchText={search} >
-                       {row.url}
-                     </Highlighter>
+                    >
+                      <Highlighter searchText={search}>{row.url}</Highlighter>
                     </div>
-
                   </div>
                   <div className="RowsLine"></div>
                 </div>

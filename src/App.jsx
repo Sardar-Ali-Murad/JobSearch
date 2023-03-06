@@ -1,13 +1,13 @@
-import React from 'react'
-import Grid from "./pages/Grid"
-import "./App.css"
+import React from "react";
+import Grid from "./pages/Grid";
+import "./App.css";
 
 const App = () => {
   return (
-    <div  className="appMain">
-       <Grid/>
+    <div className="appMain">
+      <Grid />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

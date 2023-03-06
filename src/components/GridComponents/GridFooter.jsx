@@ -3,68 +3,65 @@
 import React from "react";
 import FormRowSelect from "./FormRowSelect";
 import PaginationMain from "./PaginationMain";
-import {handleInputPage,handleSelectPage,handleInputForm}  from "../../features/pageSlice"
-import { useSelector,useDispatch } from "react-redux";
+import {
+  handleInputPage,
+  handleSelectPage,
+  handleInputForm,
+} from "../../features/pageSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const GridFooter = () => {
-  let dispatch=useDispatch()
-  let {selectPage:rowPerPage,paginationPage,totalPages,data}=useSelector((store)=>store.store)
+  let dispatch = useDispatch();
+  let {
+    selectPage: rowPerPage,
+    paginationPage,
+    totalPages,
+    data,
+  } = useSelector((store) => store.store);
   let [selectPage, setSelectPage] = React.useState(rowPerPage);
-  
+
   function handleChangeSelect(e) {
     setSelectPage(e.target.value);
   }
 
-  function submitInput(event){
-    event.preventDefault()
-    dispatch(handleInputForm())
+  function submitInput(event) {
+    event.preventDefault();
+    dispatch(handleInputForm());
   }
-
 
   let [InputPage, setInputPage] = React.useState(1);
   function handleChangeInput(e) {
-    setInputPage(e.target.value)
+    setInputPage(e.target.value);
   }
 
-  React.useEffect(()=>{
-     dispatch(handleSelectPage({page:selectPage}))
-    },[selectPage])
-    
-    React.useEffect(()=>{
-      dispatch(handleInputPage({page:InputPage}))
-  },[InputPage])
+  React.useEffect(() => {
+    dispatch(handleSelectPage({ page: selectPage }));
+  }, [selectPage]);
 
-  let list = [
-    10,
-    20,
-    30,
-    40,
-    50,
-    60,
-    70,
-    80,
-    90,
-    100,
-  ];
+  React.useEffect(() => {
+    dispatch(handleInputPage({ page: InputPage }));
+  }, [InputPage]);
 
-
+  let list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
   return (
     <div className="tableFooterMain">
-      <p>Showing Page {paginationPage} / {totalPages} with {data.length} entries</p>
+      <p>
+        Showing Page {paginationPage} / {totalPages} with {data.length} entries
+      </p>
       <div>
-        <PaginationMain/>
+        <PaginationMain />
       </div>
-        <FormRowSelect
-          value={selectPage}
-          handleChange={handleChangeSelect}
-          name="page"
-          list={list}
-        />
+      <FormRowSelect
+        value={selectPage}
+        handleChange={handleChangeSelect}
+        name="page"
+        list={list}
+      />
 
       <form className="pageInputMain" onSubmit={submitInput}>
-      <label>
-        <p>Go To </p>  
+        <label>
+          <p>Go To </p>
         </label>
         <input
           type="Text"
@@ -74,7 +71,6 @@ const GridFooter = () => {
           className="pageInput"
         />
       </form>
-
     </div>
   );
 };
