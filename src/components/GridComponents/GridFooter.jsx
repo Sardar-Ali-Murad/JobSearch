@@ -51,7 +51,7 @@ const GridFooter = () => {
 
   return (
     <div className="tableFooterMain">
-      <p>Showing {paginationPage} to {totalPages} of {data.length} entries</p>
+      <p>Showing Page {paginationPage} / {totalPages} with {data.length} entries</p>
       <div>
         <PaginationMain/>
       </div>

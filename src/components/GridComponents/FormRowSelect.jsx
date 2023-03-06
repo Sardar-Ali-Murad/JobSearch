@@ -12,7 +12,7 @@ const FormRowSelect = ({  name, value, handleChange, list }) => {
           {list.map((itemValue, index) => {
             return (
               <option key={index} value={itemValue}>
-                {itemValue} Page
+                {itemValue} Rows Per Page
               </option>
             )
           })}
