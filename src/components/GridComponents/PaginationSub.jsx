@@ -7,17 +7,21 @@ import { useSelector } from 'react-redux';
 
 function PaginationSub({  setCurrentPage }) {
   let {totalPages,paginationPage}=useSelector((state)=>state.store)
-   
 
+  
   //Set number of pages
   const numberOfPages = []
   for (let i = 1; i <= totalPages; i++) {
     numberOfPages.push(i)
   }
-
+  
   // Current active button number
   const [currentButton, setCurrentButton] = useState(1)
-
+  
+  React.useEffect(()=>{
+    setCurrentButton(paginationPage)
+  },[paginationPage])
+   
   // Array of buttons what we see on the page
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([])
 
