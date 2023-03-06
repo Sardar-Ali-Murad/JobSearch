@@ -191,10 +191,12 @@ input {
 .gridBody{
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .gridBody *{
   flex: 1;
+
 }
 
 .gridBody a {

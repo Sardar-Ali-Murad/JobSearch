@@ -8,7 +8,7 @@ import Pagination from '@mui/material/Pagination';
 function PaginationMain() {
   let dispatch=useDispatch()
   let {paginationPage,totalPages,inputPage}=useSelector((state)=>state.store)
-  const [currentPage, setCurrentPage] = useState(paginationPage)
+  // const [currentPage, setCurrentPage] = useState(paginationPage)
   
   
   const [page, setPage] = React.useState(paginationPage);
