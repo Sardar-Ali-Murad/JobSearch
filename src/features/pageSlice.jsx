@@ -39,19 +39,11 @@ const userSlice = createSlice({
       state.totalPages=Math.ceil( action.payload.data.length / state.selectPage)
     },
     handleInputForm: (state) => {
-      if (Number(state.inputPage) <= state.totalPages) {
+      if (Number(state.inputPage) <= state.totalPages && Number(state.inputPage>0)) {
         state.paginationPage = Number(state.inputPage);
       }
     },
-    // handleTitleSort: (state) => {
-    //   if (state.titleSort) {
-    //     state.data = state.data.sort((a, b) => a.title - b.title);
-    //   } else {
-    //     state.data = state.data.sort((a, b) => b.title - a.title);
-    //   }
-    //   state.titleSort = !state.titleSort;
-    // },
-
+    
     handleTitleSort: (state) => {
       if (state.titleSort) {
         state.data = state.data.sort(function(a, b) {
@@ -73,19 +65,19 @@ const userSlice = createSlice({
           var textA = a.description.toUpperCase();
           var textB = b.description.toUpperCase();
           return (textA < textB) ? -1 : (textA > textB) ? 1 : 0});
-      } else {
-        state.data = state.data.sort(function(a, b) {
-          var textA = a.description.toUpperCase();
-          var textB = b.description.toUpperCase();
-          return (textA < textB) ? 1 : (textA > textB) ? -1 : 0});
-      }
-      state.descriptionSort = !state.descriptionSort;
-    },
-
-
-    handleLocationSort: (state) => {
-      if (state.locationSort) {
-        state.data = state.data.sort(function(a, b) {
+        } else {
+          state.data = state.data.sort(function(a, b) {
+            var textA = a.description.toUpperCase();
+            var textB = b.description.toUpperCase();
+            return (textA < textB) ? 1 : (textA > textB) ? -1 : 0});
+          }
+          state.descriptionSort = !state.descriptionSort;
+        },
+        
+        
+        handleLocationSort: (state) => {
+          if (state.locationSort) {
+            state.data = state.data.sort(function(a, b) {
           var textA = a.description.toUpperCase();
           var textB = b.description.toUpperCase();
           return (textA < textB) ? -1 : (textA > textB) ? 1 : 0});
@@ -97,18 +89,31 @@ const userSlice = createSlice({
       }
       state.locationSort = !state.locationSort;
     },
+    
+    // The Below Sorting Logic is Not Working for the Chrome
+    // handleTitleSort: (state) => {
+    //   if (state.titleSort) {
+    //     state.data = state.data.sort((a, b) => a.title - b.title);
+    //   } else {
+    //     state.data = state.data.sort((a, b) => b.title - a.title);
+    //   }
+    //   state.titleSort = !state.titleSort;
+    // },
 
 
+    //  // The Below Sorting Logic is Not Working for the Chrome
     // handleDescriptionSort: (state) => {
     //   if (state.descriptionSort) {
-    //     state.data = state.data.sort((a, b) => a.description > b.description);
+      //     state.data = state.data.sort((a, b) => a.description > b.description);
     //   } else {
-    //     state.data = state.data.sort((a, b) => a.description < b.description);
+      //     state.data = state.data.sort((a, b) => a.description < b.description);
     //   }
     //   state.descriptionSort = !state.descriptionSort;
     // },
 
+    
 
+     // The Below Sorting Logic is Not Working for the Chrome
     // handleLocationSort: (state) => {
     //   if (state.locationSort) {
     //     state.data = state.data.sort((a, b) => a.location > b.location);

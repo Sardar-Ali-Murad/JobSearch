@@ -14,7 +14,7 @@ const GridHeader = () => {
 
   return (
     <div className="headersMain">
-      <a>Upcoming due Tasks</a>
+      <a>Jobs</a>
       <div className="headersIcons">
         {fullIcon ? (
           <label htmlFor="copy-button" className={`${fullIcon && "labelActive"}`}>
@@ -32,7 +32,6 @@ const GridHeader = () => {
           <IoSearchOutline className="headerSearch" onClick={()=>setFullIcon(true)} />
         )}
 
-        <CgMenuCheese className="headerMenu" />
       </div>
     </div>
   );

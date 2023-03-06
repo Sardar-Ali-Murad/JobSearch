@@ -27,6 +27,8 @@ const GridMain = () => {
     dispatch(handleTotalPages({ pages: Math.ceil(dummyData.length / selectPage) }));
   }, [selectPage]);
 
+
+  // TFetching Data from the data base
   React.useEffect(()=>{
     let start=async ()=>{
       try {
@@ -91,25 +93,24 @@ const GridMain = () => {
 
         <div className="headLine"></div>
         <div>
-          {dummyData
+          {dummyData .filter((item) =>
+              item.description.toLowerCase().includes(search.toLowerCase())
+            )
             .slice(
               paginationPage * selectPage - selectPage,
               paginationPage * selectPage
-            )
-            .filter((item) =>
-              item.title.toLowerCase().includes(search.toLowerCase())
             )
             .map((row) => {
               return (
                 <div>
                   <div className=" gridBody">
                     <div className="firstColumn" style={{ gap: "20px" }}>
-                      <a>{row?.title}</a>
+                      <a className="coloumsEnteries">{row?.title}</a>
                     </div>
 
-                    <a>{row?.location}</a>
-                    <a>{row.description.slice(0,100)}...</a>
-                    <a className="clientDate" onClick={()=>openInNewTab(row?.url)}>{row.url}</a>
+                    <a className="coloumsEnteries">{row?.location}</a>
+                    <a className="coloumsEnteries">{row.description.slice(0,100)}...</a>
+                    <a className="clientDate coloumsEnteries" onClick={()=>openInNewTab(row?.url)}>{row.url}</a>
                   </div>
                   <div className="RowsLine"></div>
                 </div>

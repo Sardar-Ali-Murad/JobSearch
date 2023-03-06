@@ -13,7 +13,6 @@ function PaginationMain() {
   React.useEffect(()=>{
     dispatch(handlePaginationPage({page:currentPage}))
   },[currentPage])
-
  
 
 

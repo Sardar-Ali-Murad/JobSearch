@@ -136,9 +136,7 @@ input {
 .gridHeadSingle a {
   cursor: pointer;
 }
-.gridBody a{
-  width: 200px;
-}
+
 
 @media screen and (max-width: 900px) {
   .gridMain{
@@ -167,6 +165,8 @@ input {
     width: 95%;
   }
 }
+
+
 
 /* Fot the TableMain.jsx */
 
@@ -358,4 +358,26 @@ input {
 }
 .pagination-container a:hover:not(.active) {
   background-color: rgb(238, 238, 238);
+}
+
+
+
+
+/* The Responsive Ness Of the table */
+@media screen and (max-width:800px) {
+  .gridBody a{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .gridBody a{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .gridBody a{
+    font-size: 10px;
+  }
 }
