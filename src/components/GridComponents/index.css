@@ -188,16 +188,26 @@ input {
   justify-content: flex-end;
 }
 
+.gridHead{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
 .gridBody{
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 20px; */
+  /* grid-auto-flow: row; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
 }
 
 .gridBody *{
   flex: 1;
-
 }
+
 
 .gridBody a {
   color: #152428;
@@ -250,6 +260,25 @@ input {
 .IconDown {
   font-size: 8px;
   cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+  .gridBody {
+    width: 120vw;
+  }
+  .gridHead {
+    width: 120vw;
+  }
+  
+  .RowsLine{
+    width: 100%;
+  }
+  .gridWrapper{
+    width: 120vw;
+  }
+  .headLine{
+    width: 120vw;
+  }
 }
 
 .flex-even {

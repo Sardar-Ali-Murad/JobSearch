@@ -64,7 +64,7 @@ const GridMain = () => {
   return (
     <div className="TableDataMain">
       <div>
-        <div className="flex-even gridHead">
+        <div className="gridHead">
           <div
             className="gridHeadSingle"
             onClick={() => dispatch(handleTitleSort())}
@@ -120,9 +120,9 @@ const GridMain = () => {
             )
             .map((row) => {
               return (
-                <div>
+                <div className="gridWrapper">
                   <div className=" gridBody">
-                    <div className="firstColumn" style={{ gap: "20px" }}>
+                    <div className="firstColumn">
                       {/* <a className="coloumsEnteries">{row?.title}</a> */}
                       <Highlighter searchText={search}>
                         {row?.title}
