@@ -51,6 +51,10 @@ const GridMain = () => {
     return  <CircularProgress />
   }
 
+  // The Searching Logic
+  // This will for any of the in this way like you search for "wan" and then it will look in the title,description and location tables and come with the row that include the "wan"  keyword
+  const keys = ["title", "description", "location"]; 
+
 
 
 
@@ -93,9 +97,8 @@ const GridMain = () => {
 
         <div className="headLine"></div>
         <div>
-          {dummyData .filter((item) =>
-              item.description.toLowerCase().includes(search.toLowerCase())
-            )
+          {dummyData.filter((item) =>
+      keys.some((key) => item[key].toLowerCase().includes(search)))
             .slice(
               paginationPage * selectPage - selectPage,
               paginationPage * selectPage
