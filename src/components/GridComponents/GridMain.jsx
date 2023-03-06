@@ -98,7 +98,7 @@ const GridMain = () => {
         <div className="headLine"></div>
         <div>
           {dummyData.filter((item) =>
-      keys.some((key) => item[key].toLowerCase().includes(search)))
+      keys.some((key) => item[key].toLowerCase().includes(search.toLowerCase())))
             .slice(
               paginationPage * selectPage - selectPage,
               paginationPage * selectPage
