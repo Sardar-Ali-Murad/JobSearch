@@ -59,7 +59,7 @@ const GridMain = () => {
 
   // The Searching Logic
   // This will for any of the in this way like you search for "wan" and then it will look in the title,description and location tables and come with the row that include the "wan"  keyword
-  const keys = ["title", "description", "location"];
+  const keys = ["title", "description", "location","url"];
 
   return (
     <div className="TableDataMain">
@@ -139,12 +139,19 @@ const GridMain = () => {
                      <Highlighter searchText={search}>
                         {row?.description.slice(0,100)}
                       </Highlighter>
-                    <a
+                    {/* <a
                       className="clientDate coloumsEnteries"
                       onClick={() => openInNewTab(row?.url)}
-                    >
+                      >
                       {row.url}
-                    </a>
+                    </a> */}
+                     
+                    <div className="clientDate" onClick={() => openInNewTab(row?.url)}>
+                    <Highlighter searchText={search} >
+                       {row.url}
+                     </Highlighter>
+                    </div>
+
                   </div>
                   <div className="RowsLine"></div>
                 </div>
