@@ -21,6 +21,9 @@ const userSlice = createSlice({
     handlePaginationPage: (state, action) => {
       state.paginationPage = action.payload.page;
     },
+    clearSearch:(state)=>{
+        state.search=""
+    },
     handleSelectPage: (state, action) => {
       state.selectPage = action.payload.page;
       state.paginationPage = 1;
@@ -135,7 +138,8 @@ export const {
   handleInputForm,
   handleDescriptionSort,
   handleLocationSort,
-  handleTitleSort
+  handleTitleSort,
+  clearSearch
 } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -4,13 +4,18 @@ import React from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { CgMenuCheese } from "react-icons/cg";
 import {RxCross2}  from "react-icons/rx"
-import {handleSearch} from "../../features/pageSlice"
+import {handleSearch,clearSearch} from "../../features/pageSlice"
 import { useDispatch,useSelector } from "react-redux";
 
 const GridHeader = () => {
   let {search}=useSelector((state)=>state.store)
   let [fullIcon, setFullIcon] = React.useState(false);
   let dispatch=useDispatch()
+
+  function cross(){
+    setFullIcon(false)
+   dispatch(clearSearch())
+  }
 
   return (
     <div className="headersMain">
@@ -26,7 +31,7 @@ const GridHeader = () => {
               onChange={(e)=>dispatch(handleSearch({search:e.target.value}))}
               placeholder="Search Here..."
             />
-            <RxCross2 id="icon" onClick={()=>setFullIcon(false)}/>
+            <RxCross2 id="icon" onClick={cross}/>
           </label>
         ) : (
           <IoSearchOutline className="headerSearch" onClick={()=>setFullIcon(true)} />
