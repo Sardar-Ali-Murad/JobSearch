@@ -76,7 +76,7 @@ const GridMain = () => {
             </div>
           </div>
           <div
-            className="gridHeadSingle"
+            className="gridHeadSingle locationColumn"
             onClick={() => dispatch(handleLocationSort())}
           >
             <a>Location</a>
@@ -87,7 +87,7 @@ const GridMain = () => {
           </div>
 
           <div
-            className="gridHeadSingle"
+            className="gridHeadSingle descriptionColumn"
             onClick={() => dispatch(handleDescriptionSort())}
           >
             <a>Description</a>
@@ -130,15 +130,19 @@ const GridMain = () => {
                     </div>
 
                     {/* <a className="coloumsEnteries">{row?.location}</a> */}
+                    <div className="locationColumn">
                     <Highlighter searchText={search}>
                         {row?.location}
                       </Highlighter>
+                    </div>
                     {/* <a className="coloumsEnteries">
                       {row.description.slice(0, 100)}...
                     </a> */}
+                    <div className="descriptionColumn">
                      <Highlighter searchText={search}>
                         {row?.description.slice(0,100)}
                       </Highlighter>
+                    </div>
                     {/* <a
                       className="clientDate coloumsEnteries"
                       onClick={() => openInNewTab(row?.url)}

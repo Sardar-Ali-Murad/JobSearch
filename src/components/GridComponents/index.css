@@ -144,11 +144,11 @@ input {
   }
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .TableDataMain{
     overflow-x: scroll;
   }
-}
+} */
 
 
 @media screen and (max-width: 500px) {
@@ -178,15 +178,20 @@ input {
 }
 
 .clientDateHead {
-  display: flex;
-  justify-content: flex-end;
+  /* display: flex; */
+  /* justify-content: flex-end; */
 }
 
 
-.URL{
+/* .URL{
   display: flex;
-  justify-content: flex-end;
-}
+  justify-content: flex-start;
+} */
+/* 
+.clientDate{
+  display: flex;
+  justify-content: flex-start;
+} */
 
 .gridHead{
   display: grid;
@@ -219,7 +224,7 @@ input {
 
 .clientDate {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   cursor: pointer;
 }
 
@@ -263,22 +268,22 @@ input {
 }
 
 @media screen and (max-width:700px) {
-  .gridBody {
+  /* .gridBody {
     width: 120vw;
   }
   .gridHead {
     width: 120vw;
-  }
+  } */
   
   .RowsLine{
     width: 100%;
   }
-  .gridWrapper{
+  /* .gridWrapper{
     width: 120vw;
   }
   .headLine{
     width: 120vw;
-  }
+  } */
 }
 
 .flex-even {
@@ -410,5 +415,18 @@ input {
 @media screen and (max-width:500px) {
   .gridBody a{
     font-size: 10px;
+  }
+}
+
+
+@media screen and (max-width:800px){
+  .locationColumn,.descriptionColumn{
+    display: none;
+  }
+  .gridBody{
+    grid-template-columns: 1fr 1fr;
+  }
+  .gridHead{
+    grid-template-columns: 1fr 1fr;
   }
 }
