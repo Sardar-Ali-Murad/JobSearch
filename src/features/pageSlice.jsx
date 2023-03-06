@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
   paginationPage: 1,
-  selectPage: 10,
+  selectPage: 30,
   inputPage: 1,
   search: "",
   totalPages: 10,
