@@ -62,7 +62,7 @@ const GridFooter = () => {
 
       <form className="pageInputMain" onSubmit={submitInput}>
         <label>
-          <p>Go To </p>
+          <p>Go To Page</p>
         </label>
         <input
           type="Text"

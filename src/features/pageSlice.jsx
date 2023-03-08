@@ -14,6 +14,7 @@ let initialState = {
   titleSort: false,
   descriptionSort: false,
   locationSort: false,
+  dateSort:false
 };
 
 const userSlice = createSlice({
@@ -114,6 +115,15 @@ const userSlice = createSlice({
     //   }
     //   state.locationSort = !state.locationSort;
     // },
+    handleDateSort: (state) => {
+      console.log("sszx")
+      if (state.dateSort) {
+        state.data = state.data.sort((a, b) => (new Date(a.addedDate)) - (new Date(b.addedDate)));
+      } else {
+        state.data = state.data.sort((a, b) => (new Date(b.addedDate)) - (new Date(a.addedDate)));
+      }
+      state.dateSort = !state.dateSort;
+    },
   },
 });
 
@@ -129,6 +139,7 @@ export const {
   handleLocationSort,
   handleTitleSort,
   clearSearch,
+  handleDateSort
 } = userSlice.actions;
 
 export default userSlice.reducer;

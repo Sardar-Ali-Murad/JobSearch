@@ -12,6 +12,7 @@ import {
   handleDescriptionSort,
   handleLocationSort,
   handleTitleSort,
+  handleDateSort
 } from "../../features/pageSlice";
 import CircularProgress from "@mui/material/CircularProgress";
 import moment from "moment/moment";
@@ -42,7 +43,6 @@ const GridMain = () => {
           "https://searchjobserver.herokuapp.com/JobSearch/crawler/all",
           { login: "root", password: "root" }
         );
-        console.log(data);
         dispatch(setData({ data: data }));
         setLoading(false);
       } catch (error) {
@@ -110,7 +110,7 @@ const GridMain = () => {
             </div>
           </div>
 
-          <div className="gridHeadSingle URL clientDate">
+          <div className="gridHeadSingle lastSeen">
             <a>Last Seen</a>
             <div className="gridHeadIcons">
               <AiFillCaretUp className="IconUp" />
@@ -168,8 +168,8 @@ const GridMain = () => {
                     </div>
                     {/*  */}
 
-                    <div>
-                      <a>{moment(row?.addedDate).format("DD/MM/YY")}</a>
+                    <div className="lastSeenData">
+                      <a >{moment(row?.addedDate).format("DD/MM/YY")}</a>
                     </div>
                   </div>
                   <div className="RowsLine"></div>
