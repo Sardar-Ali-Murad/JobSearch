@@ -9,7 +9,7 @@
 .gridMain {
   margin-left: 50%;
   transform: translateX(-50%);
-  width: 80%;
+  width: 90%;
   border-radius: 16px;
   background-color: #ffffff;
   box-shadow: 0px 4px 15px rgba(58, 96, 110, 0.15);
@@ -139,11 +139,7 @@ input {
   }
 }
 
-@media screen and (max-width: 500px) {
-  .headersMain a {
-    display: none;
-  }
-}
+
 
 @media screen and (max-width: 400px) {
   .gridMain {
@@ -162,13 +158,13 @@ input {
 
 .gridHead {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
 }
 
 .gridBody {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 2rem;
 }
 
@@ -242,6 +238,11 @@ input {
   line-height: 14px;
 }
 
+.tableFooterMain p span{
+  /* color: rgb(205, 242, 228); */
+  text-decoration: underline;
+}
+
 .FormSelect {
   padding: 7px;
   cursor: pointer;
@@ -293,9 +294,9 @@ input {
     display: none;
   }
   .gridBody {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .gridHead {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

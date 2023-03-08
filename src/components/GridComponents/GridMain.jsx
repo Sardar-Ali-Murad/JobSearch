@@ -14,6 +14,7 @@ import {
   handleTitleSort,
 } from "../../features/pageSlice";
 import CircularProgress from "@mui/material/CircularProgress";
+import moment from "moment/moment";
 
 const GridMain = () => {
   let [loading, setLoading] = React.useState(true);
@@ -25,6 +26,7 @@ const GridMain = () => {
     data: dummyData,
   } = useSelector((state) => state.store);
 
+  // This UseEffect is to change the total Pages Logic
   React.useEffect(() => {
     dispatch(
       handleTotalPages({ pages: Math.ceil(dummyData.length / selectPage) })
@@ -36,10 +38,11 @@ const GridMain = () => {
     let start = async () => {
       try {
         setLoading(true);
-        let { data } = await axios.post(
+        let { data } = await axios.get(
           "https://searchjobserver.herokuapp.com/JobSearch/crawler/all",
           { login: "root", password: "root" }
         );
+        console.log(data);
         dispatch(setData({ data: data }));
         setLoading(false);
       } catch (error) {
@@ -49,6 +52,7 @@ const GridMain = () => {
     start();
   }, []);
 
+  // When the User Click the link it will be shown in the new tab
   const openInNewTab = (url) => {
     window.open(url, "_blank", "noreferrer");
   };
@@ -64,6 +68,7 @@ const GridMain = () => {
   return (
     <div className="TableDataMain">
       <div>
+        {/* Here Starts / This is the main heading of the title,description,url,date,location... */}
         <div className="gridHead">
           <div
             className="gridHeadSingle"
@@ -104,9 +109,20 @@ const GridMain = () => {
               <AiFillCaretDown className="IconDown" />
             </div>
           </div>
+
+          <div className="gridHeadSingle URL clientDate">
+            <a>Date</a>
+            <div className="gridHeadIcons">
+              <AiFillCaretUp className="IconUp" />
+              <AiFillCaretDown className="IconDown" />
+            </div>
+          </div>
         </div>
+        {/* Here Ends the Headers which is teh first row of the grid title,description... */}
 
         <div className="headLine"></div>
+
+        {/* Here Starts the main grid data  */}
         <div>
           {dummyData
             .filter((item) =>
@@ -122,26 +138,38 @@ const GridMain = () => {
               return (
                 <div className="gridWrapper">
                   <div className=" gridBody">
+                    {/*  */}
                     <div className="firstColumn">
                       <Highlighter searchText={search}>
                         {row?.title}
                       </Highlighter>
                     </div>
+                    {/*  */}
+                    {/*  */}
                     <div className="locationColumn">
                       <Highlighter searchText={search}>
                         {row?.location}
                       </Highlighter>
                     </div>
+                    {/*  */}
+                    {/*  */}
                     <div className="descriptionColumn">
                       <Highlighter searchText={search}>
                         {row?.description.slice(0, 100)}
                       </Highlighter>
                     </div>
+                    {/*  */}
+                    {/*  */}
                     <div
                       className="jobsUrl"
                       onClick={() => openInNewTab(row?.url)}
                     >
                       <Highlighter searchText={search}>{row.url}</Highlighter>
+                    </div>
+                    {/*  */}
+
+                    <div>
+                      <a>{moment(row?.addedDate).format("DD/MM/YY")}</a>
                     </div>
                   </div>
                   <div className="RowsLine"></div>
