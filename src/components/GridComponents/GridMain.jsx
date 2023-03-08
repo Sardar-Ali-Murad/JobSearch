@@ -111,7 +111,7 @@ const GridMain = () => {
           </div>
 
           <div className="gridHeadSingle URL clientDate">
-            <a>Date</a>
+            <a>Last Seen</a>
             <div className="gridHeadIcons">
               <AiFillCaretUp className="IconUp" />
               <AiFillCaretDown className="IconDown" />

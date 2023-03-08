@@ -1,4 +1,4 @@
-// This is Select Input Component and we are using this in the GridFooter.jsx
+// This is Select Input Component and we are using this in the GridFooter.jsx whick is 10,20,30 dropdown
 
 const FormRowSelect = ({ name, value, handleChange, list }) => {
   return (

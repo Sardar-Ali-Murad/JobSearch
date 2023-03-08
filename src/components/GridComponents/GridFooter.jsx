@@ -1,4 +1,5 @@
-// This is the last part of the grid where we have the pagination stuff
+// This is the last part of the grid where we have the pagination stuff 
+// The Pagination and the dropdown and the Go to Page Feature
 
 import React from "react";
 import FormRowSelect from "./FormRowSelect";
