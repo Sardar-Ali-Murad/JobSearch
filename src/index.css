@@ -3,13 +3,13 @@
   padding: 0px;
   font-family: 'Nunito', sans-serif;
 }
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
   *{
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:800px) {
   *{
     font-size: 12px;
   }
