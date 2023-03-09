@@ -71,7 +71,7 @@ const GridMain = () => {
         {/* Here Starts / This is the main heading of the title,description,url,date,location... */}
         <div className="gridHead">
           <div
-            className="gridHeadSingle"
+            className="gridHeadSingle headTitle"
             onClick={() => dispatch(handleTitleSort())}
           >
             <a>Title</a>
@@ -81,7 +81,7 @@ const GridMain = () => {
             </div>
           </div>
           <div
-            className="gridHeadSingle locationColumn"
+            className="gridHeadSingle  headLocation"
             onClick={() => dispatch(handleLocationSort())}
           >
             <a>Location</a>
@@ -92,7 +92,7 @@ const GridMain = () => {
           </div>
 
           <div
-            className="gridHeadSingle descriptionColumn"
+            className="gridHeadSingle  headDescription"
             onClick={() => dispatch(handleDescriptionSort())}
           >
             <a>Description</a>
@@ -102,7 +102,7 @@ const GridMain = () => {
             </div>
           </div>
 
-          <div className="gridHeadSingle URL clientDate">
+          <div className="gridHeadSingle URL clientDate headUrl">
             <a>Url</a>
             <div className="gridHeadIcons">
               <AiFillCaretUp className="IconUp" />
@@ -110,7 +110,7 @@ const GridMain = () => {
             </div>
           </div>
 
-          <div className="gridHeadSingle lastSeen">
+          <div className="gridHeadSingle lastSeen headLastSeen">
             <a>Last Seen</a>
             <div className="gridHeadIcons">
               <AiFillCaretUp className="IconUp" />
@@ -156,7 +156,7 @@ const GridMain = () => {
                     <div className="descriptionColumn">
                       <Highlighter searchText={search}>
                         {row?.description.slice(0, 100)}
-                      </Highlighter>
+                      </Highlighter><span>...</span>
                     </div>
                     {/*  */}
                     {/*  */}
