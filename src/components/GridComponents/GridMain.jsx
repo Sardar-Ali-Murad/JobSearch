@@ -163,6 +163,7 @@ const GridMain = () => {
                     <div
                       className="jobsUrl"
                       onClick={() => openInNewTab(row?.url)}
+                      style={{display:"flex",flexWrap:"wrap"}}
                     >
                       <Highlighter searchText={search}>
                         {row.url.slice(0,50)}

@@ -327,9 +327,12 @@ input {
 /* The Responsive Ness Of the table */
 
 .jobsUrl{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  /* display: flex; */
+  /* width: 100%; */
+  inline-size: 150px;
+  /* color: red; */
+  /* overflow-wrap: break-word; */
+  word-break: break-all;
 }
 
 @media screen and (max-width: 800px) {
