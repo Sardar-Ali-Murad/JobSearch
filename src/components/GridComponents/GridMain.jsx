@@ -110,7 +110,7 @@ const GridMain = () => {
             </div>
           </div>
 
-          <div className="gridHeadSingle lastSeen headLastSeen">
+          <div className="gridHeadSingle lastSeen headLastSeen" onClick={()=>dispatch(handleDateSort())}>
             <a>Last Seen</a>
             <div className="gridHeadIcons">
               <AiFillCaretUp className="IconUp" />
