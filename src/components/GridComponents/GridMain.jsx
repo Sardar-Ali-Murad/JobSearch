@@ -156,16 +156,18 @@ const GridMain = () => {
                     <div className="descriptionColumn">
                       <Highlighter searchText={search}>
                         {row?.description.slice(0, 100)}
-                      </Highlighter>
-                    </div>...
+                      </Highlighter>...
+                    </div>
                     {/*  */}
                     {/*  */}
                     <div
                       className="jobsUrl"
                       onClick={() => openInNewTab(row?.url)}
                     >
-                      <Highlighter searchText={search}>{row.url.slice(0,50)}</Highlighter>
-                    </div>...
+                      <Highlighter searchText={search}>
+                        {row.url.slice(0,50)}
+                      </Highlighter>
+                    </div>
                     {/*  */}
 
                     <div className="lastSeenData">

@@ -329,7 +329,7 @@ input {
 .jobsUrl{
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
 }
 
 @media screen and (max-width: 800px) {
