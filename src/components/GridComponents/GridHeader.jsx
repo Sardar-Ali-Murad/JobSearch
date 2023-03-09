@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const GridHeader = () => {
   let { search } = useSelector((state) => state.store);
-  let [fullIcon, setFullIcon] = React.useState(false);
   let dispatch = useDispatch();
 
   function cross() {
@@ -20,11 +19,6 @@ const GridHeader = () => {
     <div className="headersMain">
       <a>Jobs</a>
       <div className="headersIcons">
-        {fullIcon ? (
-          <label
-            htmlFor="copy-button"
-            className={`${fullIcon && "labelActive"}`}
-          >
             <input
               name="copy-button"
               aria-label="copy-button"
@@ -35,14 +29,6 @@ const GridHeader = () => {
               }
               placeholder="Search Here..."
             />
-            <RxCross2 id="icon" onClick={cross} />
-          </label>
-        ) : (
-          <IoSearchOutline
-            className="headerSearch"
-            onClick={() => setFullIcon(true)}
-          />
-        )}
       </div>
     </div>
   );
