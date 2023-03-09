@@ -325,6 +325,13 @@ input {
 }
 
 /* The Responsive Ness Of the table */
+
+.jobsUrl{
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
 @media screen and (max-width: 800px) {
   .gridBody a {
     font-size: 14px;

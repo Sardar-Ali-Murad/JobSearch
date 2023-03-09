@@ -164,7 +164,7 @@ const GridMain = () => {
                       className="jobsUrl"
                       onClick={() => openInNewTab(row?.url)}
                     >
-                      <Highlighter searchText={search}>{row.url}</Highlighter>
+                      <Highlighter searchText={search}>{row.url.slice(0,100)}</Highlighter>...
                     </div>
                     {/*  */}
 
