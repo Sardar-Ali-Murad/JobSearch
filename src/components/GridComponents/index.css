@@ -158,8 +158,8 @@ input {
 
 .gridHead {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "ht ht hl hd hd hu hu hlast";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-areas: "ht ht hl hu hu hlast";
   gap: 10px;
 }
 
@@ -173,9 +173,9 @@ input {
   grid-area: hl;
 }
 
-.headDescription{
+/* .headDescription{
   grid-area: hd;
-}
+} */
 
 .headUrl{
    grid-area: hu;
@@ -188,8 +188,8 @@ input {
 
 .gridBody {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "t t l d d u u last";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "t t l  u u last";
   gap: 2rem;
 }
 
@@ -201,9 +201,9 @@ input {
 .locationColumn{
   grid-area: l;
 }
-.descriptionColumn{
+/* .descriptionColumn{
   grid-area: d;
-}
+} */
 .jobsUrl{
   grid-area: u;
 }
@@ -329,7 +329,7 @@ input {
 .jobsUrl{
   /* display: flex; */
   /* width: 100%; */
-  inline-size: 150px;
+  /* inline-size: 150px; */
   /* color: red; */
   /* overflow-wrap: break-word; */
   word-break: break-all;

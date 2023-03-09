@@ -12,7 +12,7 @@ import {
   handleDescriptionSort,
   handleLocationSort,
   handleTitleSort,
-  handleDateSort
+  handleDateSort,
 } from "../../features/pageSlice";
 import CircularProgress from "@mui/material/CircularProgress";
 import moment from "moment/moment";
@@ -91,6 +91,8 @@ const GridMain = () => {
             </div>
           </div>
 
+          {/* This is the description column that  is removed */}
+          {/* 
           <div
             className="gridHeadSingle  headDescription"
             onClick={() => dispatch(handleDescriptionSort())}
@@ -100,7 +102,7 @@ const GridMain = () => {
               <AiFillCaretUp className="IconUp" />
               <AiFillCaretDown className="IconDown" />
             </div>
-          </div>
+          </div> */}
 
           <div className="gridHeadSingle URL clientDate headUrl">
             <a>Url</a>
@@ -110,8 +112,11 @@ const GridMain = () => {
             </div>
           </div>
 
-          <div className="gridHeadSingle lastSeen headLastSeen" onClick={()=>dispatch(handleDateSort())}>
-            <a>Last Seen</a>
+          <div
+            className="gridHeadSingle lastSeen headLastSeen"
+            onClick={() => dispatch(handleDateSort())}
+          >
+            <a>First Found</a>
             <div className="gridHeadIcons">
               <AiFillCaretUp className="IconUp" />
               <AiFillCaretDown className="IconDown" />
@@ -153,26 +158,25 @@ const GridMain = () => {
                     </div>
                     {/*  */}
                     {/*  */}
-                    <div className="descriptionColumn">
+                    {/* This is the description column that  is removed */}
+                    {/* <div className="descriptionColumn">
                       <Highlighter searchText={search}>
                         {row?.description.slice(0, 100)}
                       </Highlighter>...
-                    </div>
+                    </div> */}
                     {/*  */}
                     {/*  */}
                     <div
                       className="jobsUrl"
                       onClick={() => openInNewTab(row?.url)}
-                      style={{display:"flex",flexWrap:"wrap"}}
+                      style={{ display: "flex", flexWrap: "wrap" }}
                     >
-                      <Highlighter searchText={search}>
-                        {row.url.slice(0,50)}
-                      </Highlighter>
+                      <Highlighter searchText={search}>{row.url}</Highlighter>
                     </div>
                     {/*  */}
 
                     <div className="lastSeenData">
-                      <a >{moment(row?.addedDate).format("DD/MM/YY")}</a>
+                      <a>{moment(row?.addedDate).format("DD/MM/YY")}</a>
                     </div>
                   </div>
                   <div className="RowsLine"></div>
